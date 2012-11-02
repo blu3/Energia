@@ -233,6 +233,7 @@ public class Compiler implements MessageConsumer {
         "--entry=ResetISR",
         "-mthumb", "-mcpu=cortex-m4",
         "-mfloat-abi=hard","-mfpu=fpv4-sp-d16","-fsingle-precision-constant",
+        "-nostdlib",
         "-o",
         buildPath + File.separator + primaryClassName + ".elf",
       }));
@@ -253,9 +254,10 @@ public class Compiler implements MessageConsumer {
 
     baseCommandLinker.add(runtimeLibraryName);
     baseCommandLinker.add("-L" + buildPath);
-    if(arch != "lm4f"){
-    	baseCommandLinker.add("-lm");
+    if(arch == "lm4f"){
+      baseCommandLinker.add("-lc");
     }
+    baseCommandLinker.add("-lm");
     execAsynchronously(baseCommandLinker);
 
     List baseCommandObjcopy;
