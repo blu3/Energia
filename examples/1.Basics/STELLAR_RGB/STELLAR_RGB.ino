@@ -1,5 +1,5 @@
 ///
-/// @mainpage	StellarPad Red-Green-Blue LEDs Demonstration
+/// @mainpage	StellarPad RGB LEDs demonstration
 /// @details	This sketch displays the following colours:
 /// *	red
 /// *	yellow = red + green
@@ -44,12 +44,12 @@
 
 
 
-// Core library - MCU-based
-//#if defined(__LM4F120H5QR__)  // StellarPad specific
-//#include "Energia.h"
-//#else // error
-//#error SteallarPad only. Platform not compatible
-//#endif
+// Core library - MCU-based 
+#if defined(__LM4F120H5QR__)  // StellarPad specific
+#include "Energia.h"
+#else // error
+#error SteallarPad only. Platform not compatible
+#endif
 
 // Include application, user and local libraries
 
@@ -95,9 +95,10 @@ void loop() {
   digitalWrite(BLUE_LED, HIGH);
   delay(1000);
   digitalWrite(GREEN_LED, LOW);
-  digitalWrite(BLUE_LED, HIGH);
   delay(1000);
   digitalWrite(RED_LED, HIGH);
+  delay(1000);
+  digitalWrite(BLUE_LED, LOW);
   delay(1000);
   digitalWrite(RED_LED, LOW);
   delay(1000);
@@ -126,7 +127,8 @@ void loop() {
   digitalWrite(GREEN_LED, LOW);
   digitalWrite(RED_LED, LOW);
   delay(1000);
+  
+  
 }
-
 
 
