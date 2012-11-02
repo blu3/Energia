@@ -45,11 +45,11 @@
 
 
 // Core library - MCU-based
-#if defined(__LM4F120H5QR__)  // StellarPad specific
-#include "Energia.h"
-#else // error
-#error SteallarPad only. Platform not compatible
-#endif
+//#if defined(__LM4F120H5QR__)  // StellarPad specific
+//#include "Energia.h"
+//#else // error
+//#error SteallarPad only. Platform not compatible
+//#endif
 
 // Include application, user and local libraries
 
