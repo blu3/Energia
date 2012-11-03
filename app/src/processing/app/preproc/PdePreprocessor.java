@@ -205,7 +205,7 @@ public class PdePreprocessor {
     for (int i = 0; i < prototypes.size(); i++) {
       out.print(prototypes.get(i) + "\n");
     }
-    out.print("#line 1\n");
+    out.print("#line 1 \"" + name + ".ino\"\n");
     out.print(program.substring(0));
   }
 
